@@ -24,8 +24,8 @@ public class TextNotification extends Notification {
     public void transport() throws NoTransportException {
         System.out.println("The recipient is " + this.getRecipient());
         System.out.println("The provider is " + this.getSmsProvider());
-        System.out.println("The subject is " + super.getSubject());
-        System.out.println("The body is " + super.getBody());
-        System.out.println("This was created at " + super.getCreatedAt());
+        System.out.println("The subject is " + this.getSubject());
+        System.out.println("The body is " + this.getBody());
+        System.out.println("This was created at " + this.getCreatedAt());
     }
 }
