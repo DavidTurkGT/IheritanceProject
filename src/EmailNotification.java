@@ -37,17 +37,24 @@ public class EmailNotification extends Notification {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        EmailNotification that = (EmailNotification) o;
+
+        return (recipient != null ? recipient.equals(that.recipient) : that.recipient == null) && (smtpProvider != null ? smtpProvider.equals(that.smtpProvider) : that.smtpProvider == null);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        int result = recipient != null ? recipient.hashCode() : 0;
+        result = 31 * result + (smtpProvider != null ? smtpProvider.hashCode() : 0);
+        return result;
     }
 
     @Override
     protected Object clone() throws CloneNotSupportedException {
-        return this;
+        return new EmailNotification(getSubject(), getBody(), recipient, smtpProvider);
     }
 }
