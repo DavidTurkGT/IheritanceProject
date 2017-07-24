@@ -7,7 +7,7 @@ public class EmailNotification extends Notification {
 
     public EmailNotification(String subject, String body, String recipient, String smtpProvider) {
         super(subject, body);
-        super.status = "Email override!";
+        this.status = "Email override!";
         this.recipient = recipient;
         this.smtpProvider = smtpProvider;
         sayHello();
